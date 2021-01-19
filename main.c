@@ -6,7 +6,7 @@
 /*   By: iboeters <iboeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/15 13:37:27 by iboeters      #+#    #+#                 */
-/*   Updated: 2021/01/19 12:06:32 by iboeters      ########   odam.nl         */
+/*   Updated: 2021/01/19 12:07:21 by iboeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int		main(void)
 	}
 	{
 		int fd = -1;
-		char *s4 = "test";
+		char *s4 = NULL;
 		int len = 5;
 
 		printf("\ntest ft_write\n");
