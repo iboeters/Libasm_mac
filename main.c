@@ -6,7 +6,7 @@
 /*   By: iboeters <iboeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/15 13:37:27 by iboeters      #+#    #+#                 */
-/*   Updated: 2021/01/19 15:57:36 by iboeters      ########   odam.nl         */
+/*   Updated: 2021/01/19 15:59:19 by iboeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,28 +94,28 @@ int		main(void)
 		printf("\ntest ft_read\n");
 
 		int fd = open("file.txt", O_RDONLY);
-		int fd2 = open("file.txt", O_RDONLY);
+		int fd2 = open("file2.txt", O_RDONLY);
 		char buf[20];
 		char buf2[20];
 		int len = 4;
 		printf("own  |%ld| |%s|\n", ft_read(fd, buf, len), buf);
 		printf("real |%ld| |%s|\n", read(fd2, buf2, len), buf2);
 		int fd3 = open("file.txt", O_RDONLY);
-		int fd4 = open("file.txt", O_RDONLY);
+		int fd4 = open("file2.txt", O_RDONLY);
 		char buf3[20];
 		char buf4[20];
 		len = 0;
 		printf("own  |%ld| |%s|\n", ft_read(fd3, buf3, len), buf3);
 		printf("real |%ld| |%s|\n", read(fd4, buf4, len), buf4);
 		int fd5 = open("file.txt", O_RDONLY);
-		int fd6 = open("file.txt", O_RDONLY);
+		int fd6 = open("file2.txt", O_RDONLY);
 		char buf5[20];
 		char buf6[20];
 		len = -1; //gaat deze wel erroren??
 		printf("own  |%ld| |%s| |%s|\n", ft_read(fd5, buf5, len), strerror(errno), buf5);
 		printf("real |%ld| |%s| |%s|\n", read(fd6, buf6, len), strerror(errno), buf6);
 		int fd7 = open("file.txt", O_WRONLY);
-		int fd8 = open("file.txt", O_WRONLY);
+		int fd8 = open("file2.txt", O_WRONLY);
 		char buf7[20];
 		char buf8[20];
 		len = 5;
