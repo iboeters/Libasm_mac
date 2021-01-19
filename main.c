@@ -6,13 +6,12 @@
 /*   By: iboeters <iboeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/15 13:37:27 by iboeters      #+#    #+#                 */
-/*   Updated: 2021/01/19 10:53:49 by iboeters      ########   odam.nl         */
+/*   Updated: 2021/01/19 11:13:54 by iboeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** compile: gcc -Wall -Werror -Wextra -no-pie main.c libasm.a
-** 			gcc -Wall -Werror -Wextra main.c libasm.a
+** compile: gcc -Wall -Werror -Wextra main.c libasm.a
 ** [V] ft_strlen
 ** [V] ft_strcpy
 ** [V] ft_strncmp
