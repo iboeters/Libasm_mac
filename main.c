@@ -6,7 +6,7 @@
 /*   By: iboeters <iboeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/15 13:37:27 by iboeters      #+#    #+#                 */
-/*   Updated: 2021/01/19 11:13:54 by iboeters      ########   odam.nl         */
+/*   Updated: 2021/01/19 11:28:30 by iboeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		main(void)
 		char *s = "string";
 		char *s2 = "string2";
 		// char *s3 = NULL;
-
+		printf("test ft_strlen, ft_strcpy and ft_strcmp\n");
 		printf("real |%li|\n", strlen(s));
 		printf("own  |%li|\n", ft_strlen(s));
 		printf("real |%li|\n", strlen(s2));
@@ -46,11 +46,14 @@ int		main(void)
 		int fd = 0;
 		char *s4 = "hello\n";
 		int len = 6;
+
+		printf("\ntest ft_write\n");
 		fd = open("file_to_open.s", O_WRONLY);
 		printf("real |%ld| |%d|\n", write(fd, s4, len), errno);
 		printf("own  |%ld| |%d|\n", ft_write(fd, s4, len), errno);
 	}
 	{
+		printf("\ntest ft_read\n");
 		int fd = open("file.txt", O_RDONLY);
 		int fd2 = open("file.txt", O_RDONLY);
 		char buf[20];
@@ -61,6 +64,8 @@ int		main(void)
 	}
 	{
 		char *s = "joehoeoeeeeeeeeeeeeeeeeeeeeee";
+
+		printf("\ntest ft_strdup\n");
 		char *s2 = strdup(s);
 		char *s3 = ft_strdup(s);
 		printf("real |%s| |%d|\n", s2, errno);
