@@ -6,7 +6,7 @@
 ;    By: iboeters <iboeters@student.codam.nl>         +#+                      ;
 ;                                                    +#+                       ;
 ;    Created: 2021/01/18 12:05:08 by iboeters      #+#    #+#                  ;
-;    Updated: 2021/01/19 12:50:41 by iboeters      ########   odam.nl          ;
+;    Updated: 2021/01/19 12:57:24 by iboeters      ########   odam.nl          ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -30,10 +30,10 @@ _ft_write:					; rdi = fd, rsi = buf, rdx = count
 	ret
 
 _error_return:
-	mov rdx, rax
-	push rdx
+	mov rbx, rax
+	push rbx
 	call ___error			; returns pointer to errno in rax
-	pop rdx
-	mov [rax], rdx
+	pop rbx
+	mov [rax], rbx
 	mov rax, -1
 	ret

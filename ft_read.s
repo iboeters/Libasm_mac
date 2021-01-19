@@ -6,7 +6,7 @@
 ;    By: iboeters <iboeters@student.codam.nl>         +#+                      ;
 ;                                                    +#+                       ;
 ;    Created: 2021/01/18 12:05:10 by iboeters      #+#    #+#                  ;
-;    Updated: 2021/01/19 11:51:11 by iboeters      ########   odam.nl          ;
+;    Updated: 2021/01/19 12:58:25 by iboeters      ########   odam.nl          ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -30,9 +30,11 @@ _ft_read:					; rdi = fd, rsi = buf, rdx = count
 	ret
 
 _error_return:
-	mov rdx, rax
+	mov rbx, rax
+	push rbx
 	call ___error
-	mov [rax], rdx
+	pop rbx
+	mov [rax], rbx
 	mov rax, -1
 	mov rax, -1
 	ret
