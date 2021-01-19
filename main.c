@@ -6,7 +6,7 @@
 /*   By: iboeters <iboeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/15 13:37:27 by iboeters      #+#    #+#                 */
-/*   Updated: 2021/01/19 12:42:30 by iboeters      ########   odam.nl         */
+/*   Updated: 2021/01/19 12:46:48 by iboeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int		main(void)
 
 		printf("\ntest ft_write\n");
 		fd = open("file.txt", O_WRONLY);
-		int fd2 = open("file2.txt", O_WRONLY);
+		int fd2 = open("file2.txt", O_RDWR);
 		char *s5 = "yayha";
 		int len2 = 4;
 		(void)fd2;
