@@ -6,7 +6,7 @@
 ;    By: iboeters <iboeters@student.codam.nl>         +#+                      ;
 ;                                                    +#+                       ;
 ;    Created: 2021/01/18 13:48:17 by iboeters      #+#    #+#                  ;
-;    Updated: 2021/01/19 11:24:16 by iboeters      ########   odam.nl          ;
+;    Updated: 2021/01/19 14:46:50 by iboeters      ########   odam.nl          ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -33,22 +33,23 @@ _ft_strdup:				; rdi = s
 	call _ft_strlen		; str len stored in rax
 	inc rax				; len + 1 for null termination
 	mov rdi, rax
-	call _malloc		; call malloc with argument rdi, returns string in rax
-	cmp rax, 0
+	call _malloc		; call malloc with argument rdi = size, returns string in rax
+	cmp rax, 0			; check malloc fail
 	jnz _cpy_string		; jump not zero
 
 _error_return:
-	mov rdx, rax
-	call ___error
-	mov [rax], rdx
+	mov rbx, rax		; save error return in rbx
+	push rbx
+	call ___error		; returns pointer to errno in rax
+	pop rbx
+	mov [rax], rbx
 	mov rax, 0
 	ret
 
-_cpy_string:
-	; original string is on stack, newly allocated string is in rax
-	mov rdi, rax		; rdi holds dst string
+_cpy_string:			; original string is on stack, newly allocated string is in rax
+	mov rdi, rax		; rdi holds new string
 	pop rsi
-	push rdi			; store dst
+	push rdi			; store new string
 	call _ft_strcpy
-	pop rax
+	pop rax				; return new string
 	ret

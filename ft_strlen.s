@@ -6,7 +6,7 @@
 ;    By: iboeters <iboeters@student.codam.nl>         +#+                      ;
 ;                                                    +#+                       ;
 ;    Created: 2021/01/15 11:56:44 by iboeters      #+#    #+#                  ;
-;    Updated: 2021/01/19 11:04:21 by iboeters      ########   odam.nl          ;
+;    Updated: 2021/01/19 14:44:42 by iboeters      ########   odam.nl          ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -28,7 +28,7 @@ _ft_strlen:			; rdi = s
 _counter:
 	mov cl, [rdi]	; cl = 8 bit equivalent of rcx
 	cmp cl, 0
-	je _exit
+	jz _exit		; jump zero
 	inc rdi
 	inc rax
 	jmp _counter
