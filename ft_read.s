@@ -6,7 +6,7 @@
 ;    By: iboeters <iboeters@student.codam.nl>         +#+                      ;
 ;                                                    +#+                       ;
 ;    Created: 2021/01/18 12:05:10 by iboeters      #+#    #+#                  ;
-;    Updated: 2021/01/19 11:25:30 by iboeters      ########   odam.nl          ;
+;    Updated: 2021/01/19 11:30:09 by iboeters      ########   odam.nl          ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -24,7 +24,7 @@ section .text
 	extern ___error
 
 _ft_read:					; rdi = fd, rsi = buf, rdx = count
-	mov rax, 0x000003
+	mov rax, 0x2000003
 	syscall
 	; cmp rax, 0			; delete
 	; jl _error_return		; delete
