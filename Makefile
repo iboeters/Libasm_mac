@@ -6,7 +6,7 @@
 #    By: iboeters <iboeters@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/12/15 13:21:22 by iboeters      #+#    #+#                  #
-#    Updated: 2021/01/18 13:50:36 by iboeters      ########   odam.nl          #
+#    Updated: 2021/01/19 11:08:24 by iboeters      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS =	ft_strlen.s\
 		ft_read.s\
 		ft_strdup.s
 OBJS = ${SRCS:%.s=%.o}
-FLAGS= -f elf64
+FLAGS= -f macho64
 
 PINK = \033[38;2;255;204;213m
 GREY = \033[38;2;100;100;100m
