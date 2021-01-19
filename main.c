@@ -6,7 +6,7 @@
 /*   By: iboeters <iboeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/15 13:37:27 by iboeters      #+#    #+#                 */
-/*   Updated: 2021/01/19 16:10:57 by iboeters      ########   odam.nl         */
+/*   Updated: 2021/01/19 16:13:41 by iboeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ int		main(void)
 		int fd6 = open("file2.txt", O_RDONLY);
 		char buf5[6];
 		char buf6[6];
-		len = -1; //gaat deze wel erroren??
+		len = -1;
 		printf("own  |%ld| |%s| |%s|\n", ft_read(fd5, buf5, len), strerror(errno), buf5);
 		printf("real |%ld| |%s| |%s|\n", read(fd6, buf6, len), strerror(errno), buf6);
 		int fd7 = open("file.txt", O_WRONLY);
