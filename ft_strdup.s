@@ -6,7 +6,7 @@
 ;    By: iboeters <iboeters@student.codam.nl>         +#+                      ;
 ;                                                    +#+                       ;
 ;    Created: 2021/01/18 13:48:17 by iboeters      #+#    #+#                  ;
-;    Updated: 2021/01/19 11:16:18 by iboeters      ########   odam.nl          ;
+;    Updated: 2021/01/19 11:24:16 by iboeters      ########   odam.nl          ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -35,7 +35,7 @@ _ft_strdup:				; rdi = s
 	mov rdi, rax
 	call _malloc		; call malloc with argument rdi, returns string in rax
 	cmp rax, 0
-	jne _cpy_string
+	jnz _cpy_string		; jump not zero
 
 _error_return:
 	mov rdx, rax
