@@ -6,7 +6,7 @@
 /*   By: iboeters <iboeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/15 13:37:27 by iboeters      #+#    #+#                 */
-/*   Updated: 2021/01/19 16:03:51 by iboeters      ########   odam.nl         */
+/*   Updated: 2021/01/19 16:04:35 by iboeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,9 +97,9 @@ int		main(void)
 		int fd2 = open("file2.txt", O_RDONLY);
 		char buf[5];
 		char buf2[5];
-		buf[5] = '\0';
-		buf2[5] = '\0';
-		int len = 5;
+		buf[4] = '\0';
+		buf2[4] = '\0';
+		int len = 4;
 		printf("own  |%ld| |%s|\n", ft_read(fd, buf, len), buf);
 		printf("real |%ld| |%s|\n", read(fd2, buf2, len), buf2);
 		int fd3 = open("file.txt", O_RDONLY);
