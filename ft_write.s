@@ -6,7 +6,7 @@
 ;    By: iboeters <iboeters@student.codam.nl>         +#+                      ;
 ;                                                    +#+                       ;
 ;    Created: 2021/01/18 12:05:08 by iboeters      #+#    #+#                  ;
-;    Updated: 2021/01/19 12:57:24 by iboeters      ########   odam.nl          ;
+;    Updated: 2021/01/19 14:29:26 by iboeters      ########   odam.nl          ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -24,13 +24,13 @@ section .text
 	extern ___error			; _error returns the address of errno
 
 _ft_write:					; rdi = fd, rsi = buf, rdx = count
-	mov rax, 0x2000004
+	mov rax, 0x2000004		; sycall ID for sys_write
 	syscall
 	jc _error_return		; jump if carry flag is set
 	ret
 
 _error_return:
-	mov rbx, rax
+	mov rbx, rax			; save error return in rbx
 	push rbx
 	call ___error			; returns pointer to errno in rax
 	pop rbx

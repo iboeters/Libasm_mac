@@ -6,7 +6,7 @@
 ;    By: iboeters <iboeters@student.codam.nl>         +#+                      ;
 ;                                                    +#+                       ;
 ;    Created: 2021/01/18 10:01:39 by iboeters      #+#    #+#                  ;
-;    Updated: 2021/01/19 11:03:56 by iboeters      ########   odam.nl          ;
+;    Updated: 2021/01/19 14:31:26 by iboeters      ########   odam.nl          ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -32,9 +32,9 @@ _cmp_loop:
 	cmp bl, dl
 	jne	_end
 	cmp bl, 0
-	je _end
+	jz _end						; jump zero
 	cmp dl, 0
-	je _end
+	jz _end						; jump zero
 	inc rcx
 	jmp _cmp_loop
 
