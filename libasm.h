@@ -6,7 +6,7 @@
 /*   By: iboeters <iboeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/15 13:41:10 by iboeters      #+#    #+#                 */
-/*   Updated: 2021/01/19 10:53:30 by iboeters      ########   odam.nl         */
+/*   Updated: 2021/01/19 14:57:47 by iboeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stdio.h>
 # include <string.h>
 # include <unistd.h>
-# include <sys/types.h>
 # include <fcntl.h>
 # include <errno.h>
 # include <stdlib.h>

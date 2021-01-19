@@ -6,7 +6,7 @@
 /*   By: iboeters <iboeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/15 13:37:27 by iboeters      #+#    #+#                 */
-/*   Updated: 2021/01/19 13:01:33 by iboeters      ########   odam.nl         */
+/*   Updated: 2021/01/19 14:56:15 by iboeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,14 @@ int		main(void)
 		printf("real |%s|\n", strcpy(dst, s2));
 		printf("own  |%d|\n", ft_strcmp(s, s2));
 		printf("real |%d|\n", strcmp(s, s2));
+	}
+	{
+		printf("test ft_strlen, ft_strcpy and ft_strcmp\n");
+		
+	}
+	{
+		printf("test ft_strlen, ft_strcpy and ft_strcmp\n");
+		
 	}
 	{
 		int fd = -1;
