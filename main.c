@@ -6,7 +6,7 @@
 /*   By: iboeters <iboeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/15 13:37:27 by iboeters      #+#    #+#                 */
-/*   Updated: 2021/01/19 12:17:09 by iboeters      ########   odam.nl         */
+/*   Updated: 2021/01/19 12:22:30 by iboeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,13 @@ int		main(void)
 	}
 	{
 		int fd = -1;
-		char *s4 = NULL;
-		int len = 5;
+		char *s4 = "hello\n";
+		int len = 6;
 
 		printf("\ntest ft_write\n");
 		// fd = open("file.txt", O_WRONLY);
-		printf("real |%ld| |%d|\n", write(fd, s4, len), errno);
-		// printf("own  |%ld| |%d|\n", ft_write(fd, s4, len), errno);
+		// printf("real |%ld| |%d|\n", write(fd, s4, len), errno);
+		printf("own  |%ld| |%d|\n", ft_write(fd, s4, len), errno);
 	}
 	{
 		printf("\ntest ft_read\n");
