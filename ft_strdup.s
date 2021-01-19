@@ -6,7 +6,7 @@
 ;    By: iboeters <iboeters@student.codam.nl>         +#+                      ;
 ;                                                    +#+                       ;
 ;    Created: 2021/01/18 13:48:17 by iboeters      #+#    #+#                  ;
-;    Updated: 2021/01/19 11:11:45 by iboeters      ########   odam.nl          ;
+;    Updated: 2021/01/19 11:16:18 by iboeters      ########   odam.nl          ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -41,7 +41,7 @@ _error_return:
 	mov rdx, rax
 	call ___error
 	mov [rax], rdx
-	mov rax, -1
+	mov rax, 0
 	ret
 
 _cpy_string:

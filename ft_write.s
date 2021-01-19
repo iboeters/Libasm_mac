@@ -6,7 +6,7 @@
 ;    By: iboeters <iboeters@student.codam.nl>         +#+                      ;
 ;                                                    +#+                       ;
 ;    Created: 2021/01/18 12:05:08 by iboeters      #+#    #+#                  ;
-;    Updated: 2021/01/19 11:05:33 by iboeters      ########   odam.nl          ;
+;    Updated: 2021/01/19 11:17:35 by iboeters      ########   odam.nl          ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -28,7 +28,7 @@ _ft_write:					; rdi = fd, rsi = buf, rdx = count
 	syscall
 	; cmp rax, 0 			; delete
 	; jl _error_return 		; delete
-	jc _error_return		; jump if carry flag is set
+	jz _error_return		; jump if carry flag is set
 	ret
 
 _error_return:

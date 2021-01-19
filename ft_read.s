@@ -6,7 +6,7 @@
 ;    By: iboeters <iboeters@student.codam.nl>         +#+                      ;
 ;                                                    +#+                       ;
 ;    Created: 2021/01/18 12:05:10 by iboeters      #+#    #+#                  ;
-;    Updated: 2021/01/19 11:03:50 by iboeters      ########   odam.nl          ;
+;    Updated: 2021/01/19 11:18:18 by iboeters      ########   odam.nl          ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -28,7 +28,7 @@ _ft_read:					; rdi = fd, rsi = buf, rdx = count
 	syscall
 	; cmp rax, 0			; delete
 	; jl _error_return		; delete
-	jc _error_return
+	jz _error_return
 	ret
 
 _error_return:
