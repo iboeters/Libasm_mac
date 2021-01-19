@@ -6,7 +6,7 @@
 /*   By: iboeters <iboeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/15 13:37:27 by iboeters      #+#    #+#                 */
-/*   Updated: 2021/01/19 15:47:28 by iboeters      ########   odam.nl         */
+/*   Updated: 2021/01/19 15:50:30 by iboeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,15 +80,15 @@ int		main(void)
 		printf("own  |%ld| |%d|\n", ft_write(fd, s, len));
 		printf("real |%ld| |%d|\n", write(fd, s, len));
 		fd = -1;
-		printf("own  |%ld| |%d| |%s|\n", ft_write(fd, s, len), errno, str_error(errno));
-		printf("real |%ld| |%d| |%s|\n", write(fd, s, len), errno, str_error(errno));
+		printf("own  |%ld| |%d| |%s|\n", ft_write(fd, s, len), errno, strerror(errno));
+		printf("real |%ld| |%d| |%s|\n", write(fd, s, len), errno, strerror(errno));
 		fd = open("file.txt", O_RDONLY);
-		printf("own  |%ld| |%d| |%s|\n", ft_write(fd, s, len), errno, str_error(errno));
-		printf("real |%ld| |%d| |%s|\n", write(fd, s, len), errno, str_error(errno));
+		printf("own  |%ld| |%d| |%s|\n", ft_write(fd, s, len), errno, strerror(errno));
+		printf("real |%ld| |%d| |%s|\n", write(fd, s, len), errno, strerror(errno));
 		fd = open("file.txt", O_WRONLY);
 		s = NULL;
-		printf("own  |%ld| |%d| |%s|\n", ft_write(fd, s, len), errno, str_error(errno));
-		printf("real |%ld| |%d| |%s|\n", write(fd, s, len), errno, str_error(errno));
+		printf("own  |%ld| |%d| |%s|\n", ft_write(fd, s, len), errno, strerror(errno));
+		printf("real |%ld| |%d| |%s|\n", write(fd, s, len), errno, strerror(errno));
 	}
 	{
 		printf("\ntest ft_read\n");
@@ -131,13 +131,13 @@ int		main(void)
 		char *s = "joehoeoeeeeeeeeeeeeeeeeeeeeee";
 		char *s2 = ft_strdup(s);
 		char *s3 = strdup(s);
-		printf("own  |%s| |%s|\n", s2);
-		printf("real |%s| |%s|\n", s3);
+		printf("own  |%s|\n", s2);
+		printf("real |%s|\n", s3);
 		char *s4 = "";
 		char *s5 = ft_strdup(s4);
 		char *s6 = strdup(s4);
-		printf("own  |%s| |%s|\n", s5);
-		printf("real |%s| |%s|\n", s6);
+		printf("own  |%s|\n", s5);
+		printf("real |%s|\n", s6);
 		if (s2)
 			free(s2);
 		if (s3)
