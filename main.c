@@ -6,9 +6,11 @@
 /*   By: iboeters <iboeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/15 13:37:27 by iboeters      #+#    #+#                 */
-/*   Updated: 2021/01/19 14:56:15 by iboeters      ########   odam.nl         */
+/*   Updated: 2021/01/19 15:47:28 by iboeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libasm.h"
 
 /*
 ** compile: gcc -Wall -Werror -Wextra main.c libasm.a
@@ -20,67 +22,130 @@
 ** [V] ft_strdup
 */
 
-#include "libasm.h"
-
 int		main(void)
 {
 	{
-		char dst[10];
-		char dst2[10];
-		char *s = "string";
+		printf("test: ft_strlen\n");
+
+		char *s = "";
 		char *s2 = "string2";
-		// char *s3 = NULL;
-		printf("test ft_strlen, ft_strcpy and ft_strcmp\n");
 		printf("own  |%li|\n", ft_strlen(s));
 		printf("real |%li|\n", strlen(s));
 		printf("own  |%li|\n", ft_strlen(s2));
 		printf("real |%li|\n", strlen(s2));
+		// char *s3 = NULL;
 		// printf("own  |%li|\n", ft_strlen(s3));
 		// printf("real |%li|\n", strlen(s3));
-		printf("own  |%s|\n", ft_strcpy(dst2, s2));
-		printf("real |%s|\n", strcpy(dst, s2));
+	}
+	{
+		printf("\ntest: ft_strcpy\n");
+
+		char dst[10];
+		char dst2[10];
+		char *src = "string";
+		printf("own  |%s|\n", ft_strcpy(dst, src));
+		printf("real |%s|\n", strcpy(dst2, src));
+		char dst3[10];
+		char dst4[10];
+		char *src2 = "";
+		printf("own  |%s|\n", ft_strcpy(dst3, src2));
+		printf("real |%s|\n", strcpy(dst4, src2));
+	}
+	{
+		printf("\ntest: ft_strcmp\n");
+
+		char *s = "string";
+		char *s2 = "string2";
 		printf("own  |%d|\n", ft_strcmp(s, s2));
 		printf("real |%d|\n", strcmp(s, s2));
+		char *s3 = "";
+		char *s4 = "string2";
+		printf("own  |%d|\n", ft_strcmp(s3, s4));
+		printf("real |%d|\n", strcmp(s3, s4));
+		char *s5 = "string1";
+		char *s6 = "string2";
+		printf("own  |%d|\n", ft_strcmp(s5, s6));
+		printf("real |%d|\n", strcmp(s5, s6));
+		char *s7 = "string";
+		char *s8 = "string";
+		printf("own  |%d|\n", ft_strcmp(s7, s8));
+		printf("real |%d|\n", strcmp(s7, s8));
 	}
 	{
-		printf("test ft_strlen, ft_strcpy and ft_strcmp\n");
-		
-	}
-	{
-		printf("test ft_strlen, ft_strcpy and ft_strcmp\n");
-		
-	}
-	{
-		int fd = -1;
-		char *s4 = NULL;
-		int len = 6;
 		printf("\ntest ft_write\n");
+
+		int fd = open("file.txt", O_WRONLY);
+		char *s = "hello\n";
+		int len = 6;
+		printf("own  |%ld| |%d|\n", ft_write(fd, s, len));
+		printf("real |%ld| |%d|\n", write(fd, s, len));
+		fd = -1;
+		printf("own  |%ld| |%d| |%s|\n", ft_write(fd, s, len), errno, str_error(errno));
+		printf("real |%ld| |%d| |%s|\n", write(fd, s, len), errno, str_error(errno));
+		fd = open("file.txt", O_RDONLY);
+		printf("own  |%ld| |%d| |%s|\n", ft_write(fd, s, len), errno, str_error(errno));
+		printf("real |%ld| |%d| |%s|\n", write(fd, s, len), errno, str_error(errno));
 		fd = open("file.txt", O_WRONLY);
-		printf("own  |%ld| |%d|\n", ft_write(fd, s4, len), errno);
-		printf("real |%ld| |%d|\n", write(fd, s4, len), errno);
+		s = NULL;
+		printf("own  |%ld| |%d| |%s|\n", ft_write(fd, s, len), errno, str_error(errno));
+		printf("real |%ld| |%d| |%s|\n", write(fd, s, len), errno, str_error(errno));
 	}
 	{
 		printf("\ntest ft_read\n");
+
 		int fd = open("file.txt", O_RDONLY);
 		int fd2 = open("file.txt", O_RDONLY);
 		char buf[20];
 		char buf2[20];
-		int len = 19;
-		printf("own  |%ld| |%s| |%s|\n", ft_read(fd2, buf2, len), strerror(errno), buf2);
-		printf("real |%ld| |%s| |%s|\n", read(fd, buf, len), strerror(errno), buf);
+		int len = 5;
+		printf("own  |%ld| |%s|\n", ft_read(fd, buf, len), buf);
+		printf("real |%ld| |%s|\n", read(fd2, buf2, len), buf2);
+		int fd3 = open("file.txt", O_RDONLY);
+		int fd4 = open("file.txt", O_RDONLY);
+		char buf3[20];
+		char buf4[20];
+		len = 0;
+		printf("own  |%ld| |%s|\n", ft_read(fd3, buf3, len), buf3);
+		printf("real |%ld| |%s|\n", read(fd4, buf4, len), buf4);
+		int fd5 = open("file.txt", O_RDONLY);
+		int fd6 = open("file.txt", O_RDONLY);
+		char buf5[20];
+		char buf6[20];
+		len = -1; //gaat deze wel erroren??
+		printf("own  |%ld| |%s| |%s|\n", ft_read(fd5, buf5, len), strerror(errno), buf5);
+		printf("real |%ld| |%s| |%s|\n", read(fd6, buf6, len), strerror(errno), buf6);
+		int fd7 = open("file.txt", O_WRONLY);
+		int fd8 = open("file.txt", O_WRONLY);
+		char buf7[20];
+		char buf8[20];
+		len = 5;
+		printf("own  |%ld| |%s| |%s|\n", ft_read(fd7, buf7, len), strerror(errno), buf7);
+		printf("real |%ld| |%s| |%s|\n", read(fd8, buf8, len), strerror(errno), buf8);
+		fd8 = -1;
+		printf("own  |%ld| |%s| |%s|\n", ft_read(fd8, buf7, len), strerror(errno), buf7);
+		printf("real |%ld| |%s| |%s|\n", read(fd8, buf8, len), strerror(errno), buf8);
 	}
 	{
-		char *s = "joehoeoeeeeeeeeeeeeeeeeeeeeee";
-
 		printf("\ntest ft_strdup\n");
-		char *s2 = strdup(s);
-		char *s3 = ft_strdup(s);
-		printf("own  |%s| |%s|\n", s3, strerror(errno));
-		printf("real |%s| |%s|\n", s2, strerror(errno));
+
+		char *s = "joehoeoeeeeeeeeeeeeeeeeeeeeee";
+		char *s2 = ft_strdup(s);
+		char *s3 = strdup(s);
+		printf("own  |%s| |%s|\n", s2);
+		printf("real |%s| |%s|\n", s3);
+		char *s4 = "";
+		char *s5 = ft_strdup(s4);
+		char *s6 = strdup(s4);
+		printf("own  |%s| |%s|\n", s5);
+		printf("real |%s| |%s|\n", s6);
 		if (s2)
 			free(s2);
 		if (s3)
 			free(s3);
+		if (s4)
+			free(s4);
+		if (s5)
+			free(s5);
 	}
 	return (0);
 }
