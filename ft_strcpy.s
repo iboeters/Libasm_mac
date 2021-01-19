@@ -6,7 +6,7 @@
 ;    By: iboeters <iboeters@student.codam.nl>         +#+                      ;
 ;                                                    +#+                       ;
 ;    Created: 2021/01/15 14:42:18 by iboeters      #+#    #+#                  ;
-;    Updated: 2021/01/19 10:53:08 by iboeters      ########   odam.nl          ;
+;    Updated: 2021/01/19 11:04:57 by iboeters      ########   odam.nl          ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -21,13 +21,13 @@
 ; Returns a pointer to the destination string dest.
 
 section .text
-	global ft_strcpy
-	extern ft_strlen
+	global _ft_strcpy
+	extern _ft_strlen
 
-ft_strcpy:			; rdi = dst, rsi = src
+_ft_strcpy:			; rdi = dst, rsi = src
 	push rdi 		; save dst
 	mov rdi, rsi
-	call ft_strlen	; rax holds ft_strlen src
+	call _ft_strlen	; rax holds ft_strlen src
 	pop rdi
 	push rdi
 	mov rcx, 0

@@ -6,7 +6,7 @@
 ;    By: iboeters <iboeters@student.codam.nl>         +#+                      ;
 ;                                                    +#+                       ;
 ;    Created: 2021/01/15 11:56:44 by iboeters      #+#    #+#                  ;
-;    Updated: 2021/01/19 10:53:14 by iboeters      ########   odam.nl          ;
+;    Updated: 2021/01/19 11:04:21 by iboeters      ########   odam.nl          ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -20,9 +20,9 @@
 ; to by s.
 
 section .text
-	global ft_strlen
+	global _ft_strlen
 
-ft_strlen:			; rdi = s
+_ft_strlen:			; rdi = s
 	mov rax, 0
 
 _counter:

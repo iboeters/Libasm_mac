@@ -6,7 +6,7 @@
 ;    By: iboeters <iboeters@student.codam.nl>         +#+                      ;
 ;                                                    +#+                       ;
 ;    Created: 2021/01/18 12:05:10 by iboeters      #+#    #+#                  ;
-;    Updated: 2021/01/19 10:58:11 by iboeters      ########   odam.nl          ;
+;    Updated: 2021/01/19 11:03:50 by iboeters      ########   odam.nl          ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -20,10 +20,10 @@
 ; file), and the file position is advanced by this number.
 
 section .text
-	global ft_read
+	global _ft_read
 	extern ___error
 
-ft_read:					; rdi = fd, rsi = buf, rdx = count
+_ft_read:					; rdi = fd, rsi = buf, rdx = count
 	mov rax, 0x000003
 	syscall
 	; cmp rax, 0			; delete

@@ -6,7 +6,7 @@
 ;    By: iboeters <iboeters@student.codam.nl>         +#+                      ;
 ;                                                    +#+                       ;
 ;    Created: 2021/01/18 10:01:39 by iboeters      #+#    #+#                  ;
-;    Updated: 2021/01/19 10:53:00 by iboeters      ########   odam.nl          ;
+;    Updated: 2021/01/19 11:03:56 by iboeters      ########   odam.nl          ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -19,9 +19,9 @@
 ; is found, respectively, to be less than, to match, or be greater than s2.
 
 section .text
-	global ft_strcmp
+	global _ft_strcmp
 
-ft_strcmp: 						; rdi = s1, rsi = s2
+_ft_strcmp: 					; rdi = s1, rsi = s2
 	mov rbx, 0					; store s1 content
 	mov rcx, 0					; counter
 	mov rdx, 0					; store s2 content

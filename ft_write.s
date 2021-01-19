@@ -6,7 +6,7 @@
 ;    By: iboeters <iboeters@student.codam.nl>         +#+                      ;
 ;                                                    +#+                       ;
 ;    Created: 2021/01/18 12:05:08 by iboeters      #+#    #+#                  ;
-;    Updated: 2021/01/19 10:58:38 by iboeters      ########   odam.nl          ;
+;    Updated: 2021/01/19 11:05:33 by iboeters      ########   odam.nl          ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -20,10 +20,10 @@
 ; was written).
 
 section .text
-	global ft_write
+	global _ft_write
 	extern ___error			; _error returns the address of errno
 
-ft_write:					; rdi = fd, rsi = buf, rdx = count
+_ft_write:					; rdi = fd, rsi = buf, rdx = count
 	mov rax, 0x000004
 	syscall
 	; cmp rax, 0 			; delete
