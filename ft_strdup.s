@@ -6,7 +6,7 @@
 ;    By: iboeters <iboeters@student.codam.nl>         +#+                      ;
 ;                                                    +#+                       ;
 ;    Created: 2021/01/18 13:48:17 by iboeters      #+#    #+#                  ;
-;    Updated: 2021/01/19 11:04:43 by iboeters      ########   odam.nl          ;
+;    Updated: 2021/01/19 11:11:45 by iboeters      ########   odam.nl          ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -25,7 +25,7 @@ section .text
 	global _ft_strdup
 	extern _ft_strlen
 	extern _ft_strcpy
-	extern malloc
+	extern _malloc
 	extern ___error
 
 _ft_strdup:				; rdi = s
@@ -33,7 +33,7 @@ _ft_strdup:				; rdi = s
 	call _ft_strlen		; str len stored in rax
 	inc rax				; len + 1 for null termination
 	mov rdi, rax
-	call malloc			; call malloc with argument rdi, returns string in rax
+	call _malloc		; call malloc with argument rdi, returns string in rax
 	cmp rax, 0
 	jne _cpy_string
 
