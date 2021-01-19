@@ -6,7 +6,7 @@
 /*   By: iboeters <iboeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/15 13:37:27 by iboeters      #+#    #+#                 */
-/*   Updated: 2021/01/19 12:04:47 by iboeters      ########   odam.nl         */
+/*   Updated: 2021/01/19 12:06:32 by iboeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ int		main(void)
 		printf("own  |%d|\n", ft_strcmp(s, s2));
 	}
 	{
-		int fd = 0;
-		char *s4 = "hello\n";
-		int len = 6;
+		int fd = -1;
+		char *s4 = "test";
+		int len = 5;
 
 		printf("\ntest ft_write\n");
 		fd = open("file.txt", O_RDONLY);
