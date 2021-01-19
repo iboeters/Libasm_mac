@@ -6,7 +6,7 @@
 /*   By: iboeters <iboeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/15 13:37:27 by iboeters      #+#    #+#                 */
-/*   Updated: 2021/01/19 11:28:30 by iboeters      ########   odam.nl         */
+/*   Updated: 2021/01/19 12:01:14 by iboeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ int		main(void)
 		char buf[20];
 		char buf2[20];
 		int len = 19;
-		printf("real |%ld| |%d| |%s|\n", read(fd, buf, len), errno, buf);
-		printf("own  |%ld| |%d| |%s|\n", ft_read(fd2, buf2, len), errno, buf2);
+		printf("real |%ld| |%s| |%s|\n", read(fd, buf, len), strerror(errno), buf);
+		printf("own  |%ld| |%s| |%s|\n", ft_read(fd2, buf2, len), strerror(errno), buf2);
 	}
 	{
 		char *s = "joehoeoeeeeeeeeeeeeeeeeeeeeee";
@@ -68,8 +68,8 @@ int		main(void)
 		printf("\ntest ft_strdup\n");
 		char *s2 = strdup(s);
 		char *s3 = ft_strdup(s);
-		printf("real |%s| |%d|\n", s2, errno);
-		printf("own  |%s| |%d|\n", s3, errno);
+		printf("real |%s| |%s|\n", s2, strerror(errno));
+		printf("own  |%s| |%s|\n", s3, strerror(errno));
 		if (s2)
 			free(s2);
 		if (s3)
