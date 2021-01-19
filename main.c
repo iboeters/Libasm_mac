@@ -6,7 +6,7 @@
 /*   By: iboeters <iboeters@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/15 13:37:27 by iboeters      #+#    #+#                 */
-/*   Updated: 2021/01/19 16:09:59 by iboeters      ########   odam.nl         */
+/*   Updated: 2021/01/19 16:10:57 by iboeters      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,11 +148,6 @@ int		main(void)
 			free(s5);
 		if (s6)
 			free(s6);
-	}
-
-	while (1)
-	{
-		
 	}
 	return (0);
 }
