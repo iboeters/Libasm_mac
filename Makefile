@@ -6,7 +6,7 @@
 #    By: iboeters <iboeters@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/12/15 13:21:22 by iboeters      #+#    #+#                  #
-#    Updated: 2021/01/19 16:45:24 by iboeters      ########   odam.nl          #
+#    Updated: 2021/01/19 16:51:36 by iboeters      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,8 +47,8 @@ fclean: clean
 re: fclean all
 
 test: re
+	@gcc -Wall -Werror -Wextra main.c -L. -lasm -o test
 	@echo "$(GREY)---------------------------------------------"
 	@echo "$(PINK)Run testfile: \"./test\"$(RESET)"
-	@gcc -Wall -Werror -Wextra main.c -L. -lasm -o test
 
 .PHONY: all clean fclean re test
