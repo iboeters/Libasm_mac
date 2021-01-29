@@ -14,4 +14,4 @@ ssize_t   ft_read(int fd, void *buf, size_t count);
 char      *ft_strdup(const char *s);
 ```
 
-``make test`` to compile with a testfile, main.c
+``make test`` to compile with the test file main.c
